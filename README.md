@@ -340,3 +340,4 @@ Para dúvidas sobre implementação ou customização, consulte a documentação
 
 **Desenvolvido para apresentação executiva - FG Services 2026**
 "# pagina-de-apresentacao" 
+"# pagina-de-apresentacao" 
