@@ -117,7 +117,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
           >
-            {siteConfig.companyName}: <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-cyan-600 bg-clip-text text-transparent">{siteConfig.tagline}</span>
+            Plataforma de Gestão Inteligente: <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-cyan-600 bg-clip-text text-transparent">{siteConfig.tagline}</span>
           </motion.h1>
           
           <motion.p 
@@ -228,7 +228,7 @@ export default function Home() {
               Desafios Atuais da Gestão
             </h2>
             <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-              Identificamos pontos críticos que limitam o crescimento estratégico de empresas de {siteConfig.segment}
+              Identificamos pontos críticos que limitam o crescimento estratégico de empresas de terceirização
             </p>
           </motion.div>
         </div>
@@ -1558,7 +1558,7 @@ export default function Home() {
                   Poder Total: O Que Você Está Contratando
                 </h2>
                 <p className="text-primary-100 max-w-3xl mx-auto leading-relaxed text-lg">
-                  Muito mais que um software. Uma <strong className="text-white">transformação digital completa</strong> para {siteConfig.companyName !== 'Sua Empresa' ? `${siteConfig.companyName} dominar` : 'dominar'} o mercado.
+                  Muito mais que um software. Uma <strong className="text-white">transformação digital completa</strong> para sua empresa dominar o mercado.
                 </p>
               </div>
 
@@ -1650,7 +1650,7 @@ export default function Home() {
             viewport={{ once: true }}
           >
             <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              {siteConfig.companyName !== 'Sua Empresa' ? `${siteConfig.companyName} pronta` : 'Pronto'} para ter{' '}
+              Pronto para ter{' '}
               <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-cyan-600 bg-clip-text text-transparent">{siteConfig.tagline}?</span>
             </h2>
             
@@ -1750,7 +1750,7 @@ export default function Home() {
           
           <div className="mb-4">
             <span className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-cyan-400 bg-clip-text text-transparent">
-              {siteConfig.companyName}
+              Plataforma de Gestão Inteligente
             </span>
           </div>
           <p className="text-gray-400">

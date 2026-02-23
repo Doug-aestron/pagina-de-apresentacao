@@ -189,7 +189,7 @@ export default function PainelContatos() {
         <div style={{ maxWidth: '1400px', margin: '0 auto', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1rem' }}>
           <div>
             <h1 style={{ fontSize: '1.875rem', fontWeight: 'bold', marginBottom: '0.5rem' }}>
-              Painel de Leads{siteConfig.companyName !== 'Sua Empresa' ? ` - ${siteConfig.companyName}` : ''}
+              Painel de Leads
             </h1>
             <p style={{ opacity: 0.9, fontSize: '0.875rem' }}>
               Gerencie todos os contatos da landing page • <strong>{leads.length} leads</strong>
