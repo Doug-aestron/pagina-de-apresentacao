@@ -11,8 +11,8 @@ export const siteConfig = {
   // Segmento de atuação
   segment: 'terceirização de serviços',
   
-  // Logo padrão (placeholder genérico)
-  logo: '/placeholder-logo.svg',
+  // Logo da Aestron
+  logo: '/aestron-logo.png',
   
   // Slogan/Tagline
   tagline: 'Mais Poder, Mais Controle',
