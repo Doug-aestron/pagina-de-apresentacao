@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import Image from 'next/image';
+import { siteConfig } from '@/lib/config';
 
 interface LogoProps {
   size?: 'small' | 'medium' | 'large';
@@ -10,7 +11,7 @@ interface LogoProps {
 }
 
 /**
- * Componente Logo - Exibe a logo da FG Services
+ * Componente Logo - Exibe a logo da empresa
  * Se a logo não existir, mostra um placeholder elegante
  * Suporta diferentes tamanhos e inversão de cor
  */
@@ -18,9 +19,9 @@ export default function Logo({ size = 'medium', invert = false, className = '' }
   const [imageError, setImageError] = useState(false);
 
   const sizes = {
-    small: { width: 40, height: 40 },
-    medium: { width: 128, height: 128 },
-    large: { width: 160, height: 160 },
+    small: { width: 200, height: 200 },
+    medium: { width: 100, height: 100 },
+    large: { width: 120, height: 120 },
   };
 
   const { width, height } = sizes[size];
@@ -32,7 +33,7 @@ export default function Logo({ size = 'medium', invert = false, className = '' }
         style={{ width, height }}
       >
         <span className="text-white font-bold" style={{ fontSize: width / 3 }}>
-          FG
+          PGI
         </span>
       </div>
     );
@@ -41,8 +42,8 @@ export default function Logo({ size = 'medium', invert = false, className = '' }
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
       <Image
-        src="/logo-fg.png"
-        alt="FG Services Logo"
+        src={siteConfig.logo}
+        alt="Logo"
         fill
         className={`object-contain ${invert ? 'brightness-0 invert' : ''}`}
         onError={() => setImageError(true)}

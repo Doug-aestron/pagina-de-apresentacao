@@ -50,7 +50,7 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    console.log('🚀 Iniciando envio do lead para API...');
+    console.log(' Iniciando envio do lead para API...');
     
     // Criar objeto do lead
     const leadData = {

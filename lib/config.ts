@@ -14,12 +14,12 @@ export const siteConfig = {
   // Logo da Aestron
   logo: '/aestron-logo.png',
   
-  // Slogan/Tagline
+  // Slogan/Tagline (OFICIAL)
   tagline: 'Mais Poder, Mais Controle',
   
   // Título da página
-  pageTitle: 'Plataforma de Gestão Inteligente',
+  pageTitle: 'Aestron - Mais Poder, Mais Controle',
   
   // Meta description
-  metaDescription: 'Plataforma de Gestão Inteligente para empresas de terceirização de serviços',
+  metaDescription: 'Sistema de gestão inteligente desenvolvido pela Aestron para empresas de terceirização de serviços',
 };

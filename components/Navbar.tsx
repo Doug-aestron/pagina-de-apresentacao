@@ -49,7 +49,6 @@ export default function Navbar() {
             className="flex items-center gap-3 hover:opacity-80 transition-opacity"
           >
             <Logo size="small" />
-            <span className="font-bold text-gray-900 text-lg">FG Services</span>
           </button>
 
           <div className="hidden md:flex items-center gap-1">

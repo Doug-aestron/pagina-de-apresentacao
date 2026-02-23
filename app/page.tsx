@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import Image from 'next/image';
 import { siteConfig } from '@/lib/config';
 import { 
   TrendingUp, 
@@ -98,15 +99,27 @@ export default function Home() {
       <Section id="hero" background="white" className="pt-32 pb-20 relative z-10">
         <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-cyan-50/30 to-transparent pointer-events-none" />
         
+        {/* Logo como marca d'água no fundo */}
+        <div className="absolute inset-0 flex items-center justify-center opacity-[0.03] pointer-events-none">
+          <Image
+            src="/aestron-logo.png"
+            alt="Aestron Watermark"
+            width={800}
+            height={800}
+            className="object-contain"
+          />
+        </div>
+        
         <div className="text-center max-w-4xl mx-auto relative">
-          {/* Logo da empresa no Hero */}
+          {/* Logo e branding */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
-            className="flex justify-center mb-8"
+            className="flex flex-col items-center justify-center mb-6"
           >
-            <Logo size="large" className="drop-shadow-2xl" />
+            <Logo size="large" className="drop-shadow-2xl mb-2" />
+           
           </motion.div>
 
           
@@ -115,16 +128,25 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
-            className="text-5xl md:text-7xl font-bold text-gray-900 mb-6 leading-tight"
+            className="text-5xl md:text-7xl font-bold text-gray-900 mb-4 leading-tight"
           >
-            Plataforma de Gestão Inteligente: <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-cyan-600 bg-clip-text text-transparent">{siteConfig.tagline}</span>
+            <span className="bg-gradient-to-r from-primary-700 via-primary-600 to-cyan-600 bg-clip-text text-transparent">{siteConfig.tagline}</span>
           </motion.h1>
+
+          <motion.p 
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="text-lg md:text-xl text-gray-500 mb-6 font-medium"
+          >
+            Sistema de Gestão Inteligente
+          </motion.p>
           
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}
-            className="text-xl md:text-2xl text-gray-600 mb-10 leading-relaxed"
+            className="text-lg md:text-xl text-gray-600 mb-10 leading-relaxed"
           >
             Transformando dados operacionais em decisões estratégicas para crescimento sustentável.
           </motion.p>
@@ -1750,8 +1772,11 @@ export default function Home() {
           
           <div className="mb-4">
             <span className="text-2xl font-bold bg-gradient-to-r from-primary-400 to-cyan-400 bg-clip-text text-transparent">
-              Plataforma de Gestão Inteligente
+              Aestron
             </span>
+            <p className="text-primary-300 text-sm mt-1 font-medium">
+              {siteConfig.tagline}
+            </p>
           </div>
           <p className="text-gray-400">
             © 2026 Aestron - Todos os direitos reservados
