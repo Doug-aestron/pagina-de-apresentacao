@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
+import { siteConfig } from '@/lib/config'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'FG Services - Mais Poder, Mais Controle',
-  description: 'Plataforma de Gestão Inteligente para decisões estratégicas',
+  title: siteConfig.pageTitle,
+  description: siteConfig.metaDescription,
 }
 
 export default function RootLayout({
