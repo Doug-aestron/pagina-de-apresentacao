@@ -1,9 +1,15 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { supabase } from '@/lib/supabase';
+import { supabase, isSupabaseConfigured } from '@/lib/supabase';
 
 // GET - Buscar todos os leads
 export async function GET() {
   try {
+    if (!isSupabaseConfigured() || !supabase) {
+      return NextResponse.json({ 
+        error: 'Database not configured. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables.' 
+      }, { status: 503 });
+    }
+
     const { data, error } = await supabase
       .from('leads')
       .select('*')
@@ -24,6 +30,12 @@ export async function GET() {
 // POST - Criar novo lead
 export async function POST(request: NextRequest) {
   try {
+    if (!isSupabaseConfigured() || !supabase) {
+      return NextResponse.json({ 
+        error: 'Database not configured. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables.' 
+      }, { status: 503 });
+    }
+
     const body = await request.json();
     
     // Validação básica
@@ -68,6 +80,12 @@ export async function POST(request: NextRequest) {
 // PATCH - Atualizar status do lead
 export async function PATCH(request: NextRequest) {
   try {
+    if (!isSupabaseConfigured() || !supabase) {
+      return NextResponse.json({ 
+        error: 'Database not configured. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables.' 
+      }, { status: 503 });
+    }
+
     const body = await request.json();
     const { id, status } = body;
 
@@ -100,6 +118,12 @@ export async function PATCH(request: NextRequest) {
 // DELETE - Deletar lead
 export async function DELETE(request: NextRequest) {
   try {
+    if (!isSupabaseConfigured() || !supabase) {
+      return NextResponse.json({ 
+        error: 'Database not configured. Please set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY environment variables.' 
+      }, { status: 503 });
+    }
+
     const { searchParams } = new URL(request.url);
     const id = searchParams.get('id');
 

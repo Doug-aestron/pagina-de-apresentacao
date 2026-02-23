@@ -153,11 +153,11 @@ export default function PainelContatos() {
 
   const getStatusColor = (status: Lead['status']) => {
     const colors = {
-      novo: 'bg-blue-100 text-blue-800 border-blue-300',
-      contatado: 'bg-yellow-100 text-yellow-800 border-yellow-300',
-      qualificado: 'bg-purple-100 text-purple-800 border-purple-300',
-      convertido: 'bg-green-100 text-green-800 border-green-300',
-      arquivado: 'bg-gray-100 text-gray-800 border-gray-300'
+      novo: { background: '#dbeafe', color: '#1e40af', borderColor: '#93c5fd' },
+      contatado: { background: '#fef3c7', color: '#92400e', borderColor: '#fcd34d' },
+      qualificado: { background: '#f3e8ff', color: '#6b21a8', borderColor: '#c084fc' },
+      convertido: { background: '#d1fae5', color: '#065f46', borderColor: '#6ee7b7' },
+      arquivado: { background: '#f3f4f6', color: '#1f2937', borderColor: '#d1d5db' }
     };
     return colors[status];
   };
@@ -300,7 +300,11 @@ export default function PainelContatos() {
               onMouseEnter={(e) => !isLoading && (e.currentTarget.style.background = '#2563eb')}
               onMouseLeave={(e) => !isLoading && (e.currentTarget.style.background = '#3b82f6')}
             >
-              <RefreshCw style={{ width: '18px', height: '18px' }} className={isLoading ? 'animate-spin' : ''} />
+              <RefreshCw style={{ 
+                width: '18px', 
+                height: '18px',
+                animation: isLoading ? 'spin 1s linear infinite' : 'none'
+              }} />
               {isLoading ? 'Carregando...' : 'Atualizar'}
             </button>
 
@@ -334,7 +338,13 @@ export default function PainelContatos() {
         <div style={{ background: 'white', borderRadius: '12px', overflow: 'hidden', boxShadow: '0 1px 3px rgba(0,0,0,0.1)' }}>
           {isLoading ? (
             <div style={{ padding: '4rem 2rem', textAlign: 'center', color: '#6b7280' }}>
-              <RefreshCw style={{ width: '48px', height: '48px', margin: '0 auto 1rem', opacity: 0.5' }} className="animate-spin" />
+              <RefreshCw style={{ 
+                width: '48px', 
+                height: '48px', 
+                margin: '0 auto 1rem', 
+                opacity: 0.5,
+                animation: 'spin 1s linear infinite'
+              }} />
               <p style={{ fontSize: '1.125rem', fontWeight: '600' }}>Carregando leads...</p>
             </div>
           ) : filteredLeads.length === 0 ? (
@@ -396,8 +406,8 @@ export default function PainelContatos() {
                         <select
                           value={lead.status}
                           onChange={(e) => updateLeadStatus(lead.id, e.target.value as Lead['status'])}
-                          className={getStatusColor(lead.status)}
                           style={{
+                            ...getStatusColor(lead.status),
                             padding: '0.375rem 0.75rem',
                             borderRadius: '6px',
                             fontSize: '0.75rem',
